@@ -10,6 +10,9 @@ function Main() {
             <OrganizationCard to="/ForOrganization">
                 <CardText>Organization README 만들기</CardText>
             </OrganizationCard>
+            <RepositoryCard to="/RepositoryReadme">
+                <CardText>Repository README 만들기</CardText>
+            </RepositoryCard>
             <IndividualCard to="/IndividualReadme">
                 <CardText>개인용 README 만들기</CardText>
             </IndividualCard>
@@ -62,8 +65,12 @@ const OrganizationCard = styled(Card)`
   background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
 `;
 
+const RepositoryCard = styled(Card)`
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+`;
+
 const IndividualCard = styled(Card)`
-background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
 `;
 
 const CardText = styled.div`
