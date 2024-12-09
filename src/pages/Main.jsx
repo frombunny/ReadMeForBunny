@@ -10,10 +10,10 @@ function Main() {
             <OrganizationCard to="/ForOrganization">
                 <CardText>Organization README 만들기</CardText>
             </OrganizationCard>
-            <RepositoryCard to="/RepositoryReadme">
+            <RepositoryCard to="/ForRepository">
                 <CardText>Repository README 만들기</CardText>
             </RepositoryCard>
-            <IndividualCard to="/IndividualReadme">
+            <IndividualCard to="/ForIndividual">
                 <CardText>개인용 README 만들기</CardText>
             </IndividualCard>
             </CardWrapper>
