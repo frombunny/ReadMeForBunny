@@ -150,14 +150,14 @@ ${backendGuide}
                     placeholder="프로젝트 이름"
                     value={projectName}
                     onChange={(e) => setProjectName(e.target.value)}
-                    style={{ width: "100%", marginBottom: "10px", padding: "10px", border: "1px solid #ccc", borderRadius: "8px" }}
+                    style={{ width: "90%", marginBottom: "10px", padding: "10px", border: "1px solid #ccc", borderRadius: "8px" }}
                 />
                 <textarea
                     placeholder="프로젝트 간단한 소개"
                     value={projectDescription}
                     onChange={(e) => setProjectDescription(e.target.value)}
                     rows="3"
-                    style={{ width: "100%", marginBottom: "10px", padding: "10px", border: "1px solid #ccc", borderRadius: "8px" }}
+                    style={{ width: "90%", marginBottom: "10px", padding: "10px", border: "1px solid #ccc", borderRadius: "8px" }}
                 />
                 <div style={{ display: "flex", gap: "10px" }}>
                     <input
@@ -185,24 +185,25 @@ ${backendGuide}
                     placeholder="이름"
                     value={newMemberName}
                     onChange={(e) => setNewMemberName(e.target.value)}
-                    style={{ width: "30%", marginRight: "10px", padding: "10px", border: "1px solid #ccc", borderRadius: "8px" }}
+                    style={{ width: "25%", marginRight: "10px", padding: "10px", border: "1px solid #ccc", borderRadius: "8px" }}
                 />
                 <input
                     type="text"
                     placeholder="GitHub 아이디"
                     value={newMemberGithub}
                     onChange={(e) => setNewMemberGithub(e.target.value)}
-                    style={{ width: "30%", marginRight: "10px", padding: "10px", border: "1px solid #ccc", borderRadius: "8px" }}
+                    style={{ width: "25%", marginRight: "10px", padding: "10px", border: "1px solid #ccc", borderRadius: "8px" }}
                 />
-                </StackContainer>
                 <input
                     type="text"
                     placeholder="역할"
                     value={newMemberRole}
                     onChange={(e) => setNewMemberRole(e.target.value)}
-                    style={{ width: "30%", marginRight: "10px", padding: "10px", border: "1px solid #ccc", borderRadius: "8px" }}
+                    style={{ width: "25%", marginRight: "10px", padding: "10px", border: "1px solid #ccc", borderRadius: "8px" }}
                 />
+                
                 <Button onClick={addMember}>추가</Button>
+                </StackContainer>
                 <TeamList>
                     {teamMembers.map((member, index) => (
                         <li key={index} style={{ marginBottom: "10px" }}>
@@ -214,19 +215,20 @@ ${backendGuide}
 
             <Section>
                 <h2>📌 주요 기능</h2>
+                <StackContainer>
                 <input
                     type="text"
                     placeholder="기능 제목 입력"
                     value={newFeatureTitle}
                     onChange={(e) => setNewFeatureTitle(e.target.value)}
-                    style={{ width: "100%", marginBottom: "10px", padding: "10px", border: "1px solid #ccc", borderRadius: "8px" }}
+                    style={{ width: "90%", marginBottom: "10px", padding: "10px", border: "1px solid #ccc", borderRadius: "8px" }}
                 />
                 <textarea
                     placeholder="기능 설명 입력"
                     value={newFeatureDescription}
                     onChange={(e) => setNewFeatureDescription(e.target.value)}
                     rows="3"
-                    style={{ width: "100%", marginBottom: "10px", padding: "10px", border: "1px solid #ccc", borderRadius: "8px" }}
+                    style={{ width: "90%", marginBottom: "10px", padding: "10px", border: "1px solid #ccc", borderRadius: "8px" }}
                 />
                 <Button onClick={addFeature}>추가</Button>
                 <FeatureList>
@@ -236,6 +238,7 @@ ${backendGuide}
                         </li>
                     ))}
                 </FeatureList>
+                </StackContainer>
             </Section>
 
             <Section>
