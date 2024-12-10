@@ -354,7 +354,7 @@ const MainLayout = styled.div`
   padding: 20px;
   max-width: 900px;
   margin: auto;
-  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+  background: linear-gradient(135deg, #ffd1dc, #fbc2eb); /* 더 핑크빛 */
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   font-family: 'Inter', sans-serif;
@@ -375,14 +375,14 @@ const Section = styled.div`
     font-size: 1.4rem;
     margin-bottom: 16px;
     color: #333333;
-    border-bottom: 2px solid #007bff;
+    border-bottom: 2px solid #ff69b4;
     display: inline-block;
     padding-bottom: 4px;
   }
 `;
 
 const ReadmePreview = styled.pre`
-  background: linear-gradient(135deg, #fbc2eb, #ffffff);
+  background: linear-gradient(135deg, #ffd1dc, #fbc2eb); /* 더 핑크빛 */
   padding: 20px;
   border-radius: 12px;
   font-family: 'Fira Code', monospace;
@@ -395,7 +395,7 @@ const ReadmePreview = styled.pre`
 
 const Button = styled.button`
   padding: 10px 20px;
-  background: #007bff;
+  background: #ff69b4;
   color: white;
   border: none;
   border-radius: 8px;
@@ -403,12 +403,12 @@ const Button = styled.button`
   transition: background 0.3s, transform 0.2s;
 
   &:hover {
-    background: #0056b3;
+    background: #ff85c0;
     transform: translateY(-2px);
   }
 
   &:active {
-    background: #00448a;
+    background: #ff4d94;
     transform: translateY(0);
   }
 `;
@@ -436,7 +436,7 @@ const BadgeButton = styled.button`
   ${(props) =>
     props.selected &&
     `
-    outline: 2px solid #007bff;
+    outline: 2px solid #ff69b4;
   `}
 `;
 
@@ -446,7 +446,7 @@ const TeamList = styled.ul`
   margin: 0;
 
   & li {
-    background: linear-gradient(135deg, #fbc2eb, #ffffff);
+    background: linear-gradient(135deg, #ffd1dc, #fbc2eb); /* 더 핑크빛 */
     padding: 10px;
     border-radius: 8px;
     margin-bottom: 8px;
@@ -457,7 +457,7 @@ const TeamList = styled.ul`
   }
 
   & li a {
-    color: #007bff;
+    color: #ff69b4;
     text-decoration: none;
     font-weight: bold;
   }
@@ -468,7 +468,7 @@ const FeatureList = styled.ul`
   padding: 0;
 
   & li {
-    background: linear-gradient(135deg, #fbc2eb, #ffffff);
+    background: linear-gradient(135deg, #ffd1dc, #fbc2eb); /* 더 핑크빛 */
     padding: 12px;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -484,7 +484,7 @@ const StackContainer = styled.div`
 `;
 
 const MarkdownPreview = styled.div`
-  background:  #ffffff;
+  background: #ffffff;
   padding: 20px;
   border-radius: 12px;
   border: 1px solid #dcdcdc;

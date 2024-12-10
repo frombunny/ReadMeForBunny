@@ -66,7 +66,7 @@ const OrganizationCard = styled(Card)`
 `;
 
 const RepositoryCard = styled(Card)`
-  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+    background: linear-gradient(135deg, #ffd1dc, #fbc2eb); 
 `;
 
 const IndividualCard = styled(Card)`
