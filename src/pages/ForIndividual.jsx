@@ -13,6 +13,7 @@ function ForIndividual() {
     const [newProjectLink, setNewProjectLink] = useState("");
     const [newProjectPeriod, setNewProjectPeriod] = useState("");
     const [newProjectNotes, setNewProjectNotes] = useState("");
+    const [newProjectRole, setNewProjectRole] = useState("");
     const [solvedAcId, setSolvedAcId] = useState("");
     const [githubUsername, setGithubUsername] = useState("");
     const [readmeText, setReadmeText] = useState("");
@@ -51,10 +52,10 @@ ${techStack
 ---
 <br><br><br> 
 ## 💼 **Projects**
-| **기간**      | **프로젝트명** | **링크**                       | **비고**     |
-|--------------|--------------|--------------------------------------|------------|
+| **기간**      | **프로젝트명** | **링크**                       | **역할**     | **기타**     |
+|--------------|--------------|--------------------------------------|------------|------------|
 ${projects
-        .map((project) => `| ${project.period} | ${project.name} | [GitHub Link](${project.link}) | ${project.notes || "-"} |`)
+        .map((project) => `| ${project.period} | ${project.name} | [GitHub Link](${project.role}) | ${project.name} | ${project.notes || "-"} |`)
         .join("\n")}
     
 ---
@@ -97,6 +98,7 @@ ${githubUsername ? `- **GitHub**: [${githubUsername}](https://github.com/${githu
                     name: newProjectName,
                     link: newProjectLink,
                     period: newProjectPeriod,
+                    role : newProjectRole,
                     notes: newProjectNotes,
                 },
             ]);
@@ -216,6 +218,12 @@ ${githubUsername ? `- **GitHub**: [${githubUsername}](https://github.com/${githu
                     placeholder="기간 (예: 2023.01 ~ 2023.06)"
                     value={newProjectPeriod}
                     onChange={(e) => setNewProjectPeriod(e.target.value)}
+                />
+                <Input
+                    type="text"
+                    placeholder="역할"
+                    value={newProjectRole}
+                    onChange={(e) => setNewProjectRole(e.target.value)}
                 />
                 <Textarea
                     placeholder="비고 (선택 사항)"
