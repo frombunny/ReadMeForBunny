@@ -1,7 +1,10 @@
 
 # 🚀 READMEFORBUNNY
-나를 위한 나에 의한 리드미 생성기 <br>
-방명록 한번씩 남겨주라묘
+내가 만들고.. 내가 쓰는 거임....
+내 취향 반영....
+그치만 조언 및 지적 대환영
+
+https://readmeforbunny-i97fb599s-frombunnys-projects.vercel.app/
 <br><br>
           
     
