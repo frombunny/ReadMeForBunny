@@ -20,10 +20,17 @@ function ForIndividual() {
     const [email, setEmail] = useState("");
 
     useEffect(() => {
+        // 색상 추출 함수
+        const extractColorFromBadge = (badgeUrl) => {
+            const regex = /-([0-9A-F]{6})\?/; // 색상 코드 (6자리 HEX) 추출
+            const match = badgeUrl.match(regex);
+            return match ? match[1] : '000000';
+        };
+
         const updatedReadme = `
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=wave&color=gradient&height=150&section=header&text=${encodeURIComponent(name || "Welcome!")}&fontSize=50" />
-    
+<img src="https://capsule-render.vercel.app/api?type=wave&color=gradient&height=150&section=header&fontSize=50" />
+
 # 🌟 ${name || "Your Name"}
 ${bio ? `> ${bio}` : ""}
     
@@ -33,21 +40,33 @@ ${bio ? `> ${bio}` : ""}
 ## 🔧 **Tech Stack**
 ### 🛠 **Skills**
 ${techStack
-        .filter((stack) => techStacks.find((item) => item.name === stack && item.type === "Skill"))
-        .map((stack) => `<img src="https://img.shields.io/badge/${encodeURIComponent(stack)}-blue?style=for-the-badge" alt="${stack}" />`)
-        .join(" ")}
+    .filter((stack) => techStacks.find((item) => item.name === stack && item.type === "Skill"))
+    .map((stack) => {
+        const stackData = techStacks.find(item => item.name === stack);
+        const color = extractColorFromBadge(stackData.badge);  // 색상 추출
+        return `<img src="https://img.shields.io/badge/${encodeURIComponent(stack)}-${color}?style=for-the-badge" alt="${stack}" />`;
+    })
+    .join(" ")}
     
 ### 🛠 **Infra**
 ${techStack
-        .filter((stack) => infraStacks.find((item) => item.name === stack))
-        .map((stack) => `<img src="https://img.shields.io/badge/${encodeURIComponent(stack)}-blue?style=for-the-badge" alt="${stack}" />`)
-        .join(" ")}
+    .filter((stack) => infraStacks.find((item) => item.name === stack))
+    .map((stack) => {
+        const stackData = infraStacks.find(item => item.name === stack);
+        const color = extractColorFromBadge(stackData.badge);  // 색상 추출
+        return `<img src="https://img.shields.io/badge/${encodeURIComponent(stack)}-${color}?style=for-the-badge" alt="${stack}" />`;
+    })
+    .join(" ")}
     
 ### 🛠 **Tools**
 ${techStack
-        .filter((stack) => toolStacks.find((item) => item.name === stack))
-        .map((stack) => `<img src="https://img.shields.io/badge/${encodeURIComponent(stack)}-blue?style=for-the-badge" alt="${stack}" />`)
-        .join(" ")}
+    .filter((stack) => toolStacks.find((item) => item.name === stack))
+    .map((stack) => {
+        const stackData = toolStacks.find(item => item.name === stack);
+        const color = extractColorFromBadge(stackData.badge);  // 색상 추출
+        return `<img src="https://img.shields.io/badge/${encodeURIComponent(stack)}-${color}?style=for-the-badge" alt="${stack}" />`;
+    })
+    .join(" ")}
     
 ---
 <br><br><br> 
@@ -55,7 +74,7 @@ ${techStack
 | **기간**      | **프로젝트명** | **링크**                       | **역할**     | **기타**     |
 |--------------|--------------|--------------------------------------|------------|------------|
 ${projects
-        .map((project) => `| ${project.period} | ${project.name} | [GitHub Link](${project.role}) | ${project.name} | ${project.notes || "-"} |`)
+        .map((project) => `| ${project.period} | ${project.name} | [GitHub Link](${project.link}) | ${project.role} | ${project.notes || "-"} |`)
         .join("\n")}
     
 ---
